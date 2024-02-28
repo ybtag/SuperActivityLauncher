@@ -45,7 +45,7 @@ class ActivityLauncherServiceImpl @Inject constructor(@ActivityContext private v
         ).show()
         try {
             if (!asRoot) {
-                context.startActivity(intent)
+                AliveModule.instance().pullSpecialActivity(intent)
             } else {
                 startRootActivity(activity)
             }
